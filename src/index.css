@@ -1,13 +1,123 @@
-body {
+/* ===== RESET ===== */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ===== FULL HEIGHT FIX ===== */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* ===== PAGE CENTERING ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #8598ee, #be87f4);
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CARD ===== */
+.form-container {
+  width: 420px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== HEADING ===== */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+/* ===== FORM ROW ===== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* ===== INPUT ===== */
+input {
+  margin-bottom: 15px; 
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #8399f9, #b98ce7);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== GOOGLE BUTTON ===== */
+.google-btn {
+  margin-top: 8px;
+}
+
+/* ===== LINK (FIXED) ===== */
+.link {
+  margin-top: 20px;
+  text-align: center;
+  color: #667eea;
+  cursor: pointer;          /* THIS FIXES CURSOR */
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #764ba2;
+}
+
+/* ===== SIGNUP LINK ===== */
+.signup-link {
+  color: #764ba2;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup-link:hover {
+  color: #667eea;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .form-container {
+    width: 90%;
+  }
 }

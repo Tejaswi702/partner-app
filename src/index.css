@@ -15,7 +15,7 @@ body,
 /* ===== PAGE CENTERING ===== */
 body {
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #8598ee, #be87f4);
+  background: white;
 }
 
 #root {
@@ -64,7 +64,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #f2f3f6;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
@@ -74,7 +74,7 @@ button {
   padding: 14px;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #8399f9, #b98ce7);
+  background: black;
   color: white;
   font-size: 15px;
   font-weight: bold;
@@ -94,25 +94,25 @@ button:hover {
 .link {
   margin-top: 20px;
   text-align: center;
-  color: #667eea;
+  color: #0b0b0b;
   cursor: pointer;          /* THIS FIXES CURSOR */
 }
 
 .link:hover {
   text-decoration: underline;
-  color: #764ba2;
+  color: #000000;
 }
 
 /* ===== SIGNUP LINK ===== */
 .signup-link {
-  color: #764ba2;
+  color: #0f0f0f;
   text-decoration: underline;
   cursor: pointer;
   font-weight: 600;
 }
 
 .signup-link:hover {
-  color: #667eea;
+  color: #000000;
 }
 
 /* ===== RESPONSIVE ===== */

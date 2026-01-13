@@ -7,7 +7,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // ✅ 1. If user is already logged in, go to dashboard
+  //1. If user is already logged in, go to dashboard
   useEffect(() => {
     const checkUser = async () => {
       const {

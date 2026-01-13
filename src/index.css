@@ -121,3 +121,11 @@ button:hover {
     width: 90%;
   }
 }
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #e53935; /* clean red */
+  font-weight: 500;
+}

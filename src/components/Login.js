@@ -5,9 +5,10 @@ import { supabase } from "../supabase";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // ✅ NEW
   const navigate = useNavigate();
 
-  //1. If user is already logged in, go to dashboard
+  // 1. If user already logged in → dashboard
   useEffect(() => {
     const checkUser = async () => {
       const {
@@ -22,9 +23,10 @@ function Login() {
     checkUser();
   }, [navigate]);
 
-  // ✅ 2. Normal email + password login
+  // 2. Email + Password Login
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage(""); // clear old error
 
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -32,13 +34,13 @@ function Login() {
     });
 
     if (error) {
-      alert(error.message);
+      setErrorMessage("Incorrect email or password"); // ✅ SHOW MESSAGE
     } else {
       navigate("/dashboard");
     }
   };
 
-  // ✅ 3. Google login with redirect
+  // 3. Google Login
   const handleGoogleLogin = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -57,7 +59,10 @@ function Login() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setErrorMessage(""); // clear error on typing
+          }}
           required
         />
 
@@ -65,7 +70,10 @@ function Login() {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setErrorMessage(""); // clear error on typing
+          }}
           required
         />
 
@@ -75,6 +83,11 @@ function Login() {
       <button className="google-btn" onClick={handleGoogleLogin}>
         Sign in with Google
       </button>
+
+      {/* ✅ ERROR MESSAGE DISPLAY */}
+      {errorMessage && (
+        <p className="error-message">{errorMessage}</p>
+      )}
 
       <div className="link" onClick={() => navigate("/forgot-password")}>
         Forgot Password?

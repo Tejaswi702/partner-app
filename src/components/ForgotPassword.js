@@ -6,7 +6,7 @@ function ForgotPassword() {
 
   const resetPassword = async () => {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: "http://localhost:3000/reset-password",
+     redirectTo: "https://partner-app-6voh.vercel.app/reset-password",
     });
 
     if (error) {
